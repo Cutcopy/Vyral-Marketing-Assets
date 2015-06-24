@@ -1,0 +1,13 @@
+{
+  "name": "Email-of-the-week-generator",
+  "version": "0.0.1",
+  "description": "Scrape emails",
+  "main": "server.js",
+  "author": "Brent",
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "cheerio": "latest",
+    "express": "latest",
+    "request": "latest"
+  }
+}
