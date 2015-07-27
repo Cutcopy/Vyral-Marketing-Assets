@@ -1,9 +1,9 @@
 app.get('/scrape', function(req, res){
- 
+
  url = "http://p0.vresp.com/7AqdMy"
- 		
+
 	exports.request(url, function(error, response, html){
-		
+
 		if(!error){
 			var $ = cheerio.load(html);
 
@@ -14,7 +14,7 @@ app.get('/scrape', function(req, res){
 		        var data = $(this);
 		        title = data.text();
 
-		        json.title = title;   
+		        json.title = title;
 
 	        })
 
@@ -22,11 +22,11 @@ app.get('/scrape', function(req, res){
 		        var data = $(this);
 		        name = data.find().last().text();
 
-		        json.name = name;  
-		        json.url = emailurl;  
+		        json.name = name;
+		        json.url = emailurl;
 
-	        })	
-	        
+	        })
+
 		}
 
 		exports.fs.appendFile('output.json', JSON.stringify(json, null, 4), function(err){
